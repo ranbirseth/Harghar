@@ -1,0 +1,17 @@
+{
+  "expo": {
+    "name": "HARghAR Admin",
+    "slug": "harghar-admin",
+    "scheme": "harghar-admin",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "plugins": [
+      "expo-router",
+      "expo-status-bar"
+    ],
+    "android": {
+      "package": "com.harghar.admin"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "harghar",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/client",
+    "apps/admin",
+    "apps/admin-mobile",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n server,client,admin -c yellow,cyan,magenta \"npm run dev:server\" \"npm run dev:client\" \"npm run dev:admin\"",
+    "dev:client": "npm run dev --workspace @harghar/client",
+    "dev:admin": "npm run dev --workspace @harghar/admin",
+    "dev:mobile": "npm run start --workspace @harghar/admin-mobile",
+    "dev:server": "npm run dev --workspace @harghar/server",
+    "build": "npm run build --workspace @harghar/server && npm run build --workspace @harghar/client && npm run build --workspace @harghar/admin",
+    "lint": "eslint apps server",
+    "typecheck": "npm run typecheck --workspace @harghar/server && npm run typecheck --workspace @harghar/client && npm run typecheck --workspace @harghar/admin && npm run typecheck --workspace @harghar/admin-mobile",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.0",
+    "@types/node": "^24.10.0",
+    "@types/react": "~19.2.4",
+    "@types/react-dom": "~19.2.3",
+    "autoprefixer": "^10.4.22",
+    "concurrently": "^9.2.1",
+    "eslint": "^9.39.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "prettier": "^3.6.2",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-native": "0.86.3",
+    "tailwindcss": "^3.4.19",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.48.0"
+  }
+}
